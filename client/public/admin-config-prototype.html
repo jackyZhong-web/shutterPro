@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/admin-config-prototype.css">
+</head>
+<body class="admin-layout" data-page="admin-config-prototype">
+  <aside class="sidebar">
+    <img class="brand-logo" src="/images/logo.png" alt="Kenda">
+    <div class="small" data-i18n="admin.sidebar.system">ShutterPro System</div>
+    <div style="height:12px"></div>
+    <a class="nav-item" href="/admin-company.html" data-i18n="admin.sidebar.company">Company</a>
+    <a class="nav-item" href="/admin-user.html" data-i18n="admin.sidebar.user_config">User Config</a>
+    <a class="nav-item" href="/admin-profile.html" data-i18n="admin.sidebar.profile_config">Profile Config</a>
+    <a class="nav-item" href="/admin-order-list.html" data-i18n="admin.sidebar.order_list">Order List</a>
+    <a class="nav-item" href="/admin-remakes.html" data-i18n="admin.sidebar.remakes">Remakes</a>
+    <a class="nav-item" href="/admin-excel.html" data-i18n="admin.sidebar.excel_config">Excel Export Config</a>
+    <a class="nav-item active" href="/admin-config-prototype.html" data-i18n="admin.sidebar.config_prototype">Config Prototype</a>
+    <div class="user-card">
+      <div class="icon-btn">👤</div>
+      <div>
+        <div data-i18n="admin.sidebar.administrator">Administrator</div>
+        <div>admin@system.com</div>
+      </div>
+    </div>
+  </aside>
+  <main class="content">
+    <div class="page-header">
+      <h2 data-i18n="admin.config_proto.title">Company Config Prototype</h2>
+      <div class="right-actions">
+        <button class="primary" type="button" data-config-save data-i18n="admin.common.save">Save</button>
+      </div>
+    </div>
+    <div class="config-stack">
+      <div class="table-card">
+        <div class="card-title" data-i18n="admin.config_proto.company.title">Company</div>
+        <div class="card-row">
+          <label class="field-label" data-i18n="admin.config_proto.company.select">Select Company</label>
+          <select class="table-select" data-company-select></select>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="card-title" data-i18n="admin.config_proto.product_style.title">Product & Style</div>
+        <div class="config-grid">
+          <div class="config-field">
+            <label class="field-label" data-i18n="admin.config_proto.products">Products</label>
+            <div class="multi-select" data-multi-select data-product-select>
+              <button class="multi-select-trigger" type="button">
+                <span data-placeholder data-i18n="admin.config_proto.all_products">All Products</span>
+                <span class="multi-select-arrow">▾</span>
+              </button>
+              <div class="multi-select-panel"></div>
+            </div>
+          </div>
+          <div class="config-field">
+            <label class="field-label" data-i18n="admin.config_proto.styles">Styles</label>
+            <div class="multi-select" data-multi-select data-style-select>
+              <button class="multi-select-trigger" type="button">
+                <span data-placeholder data-i18n="admin.config_proto.all_styles">All Styles</span>
+                <span class="multi-select-arrow">▾</span>
+              </button>
+              <div class="multi-select-panel">
+                <label class="multi-select-item"><input type="checkbox" value="Full Height" checked>Full Height</label>
+                <label class="multi-select-item"><input type="checkbox" value="Café style">Café style</label>
+                <label class="multi-select-item"><input type="checkbox" value="Tier on Tier">Tier on Tier</label>
+                <label class="multi-select-item"><input type="checkbox" value="Bi-Fold Track">Bi-Fold Track</label>
+                <label class="multi-select-item"><input type="checkbox" value="Bypass Track">Bypass Track</label>
+                <label class="multi-select-item"><input type="checkbox" value="Shape">Shape</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="card-title" data-i18n="admin.config_proto.color.title">Color Config</div>
+        <div class="card-row">
+          <label class="field-label" data-i18n="admin.config_proto.color_product">Editing Product</label>
+          <select class="table-select" data-color-product-select></select>
+        </div>
+        <div class="config-grid">
+          <div class="config-field">
+            <label class="field-label" data-i18n="admin.config_proto.shutter_colors">Shutter Colors</label>
+            <textarea class="table-input" rows="4" data-i18n-placeholder="admin.config_proto.color_placeholder" placeholder="White/Black/Gray" data-shutter-colors></textarea>
+            <div class="field-hint" data-i18n="admin.config_proto.slash_hint">Use "/" to separate colors.</div>
+          </div>
+          <div class="config-field">
+            <label class="field-label" data-i18n="admin.config_proto.hinge_colors">Hinge Colors</label>
+            <textarea class="table-input" rows="4" data-i18n-placeholder="admin.config_proto.color_placeholder" placeholder="White/Black/Gray" data-hinge-colors></textarea>
+            <div class="field-hint" data-i18n="admin.config_proto.slash_hint">Use "/" to separate colors.</div>
+          </div>
+        </div>
+        <div class="config-field" style="margin-top:12px;">
+          <label class="field-label" data-i18n="admin.config_proto.tilt_options">Tilt Options</label>
+          <textarea class="table-input" rows="2" data-i18n-placeholder="admin.config_proto.tilt_placeholder" placeholder="Central/Clear View/Inside/Left/Right/Offset" data-tilt-options></textarea>
+          <div class="field-hint" data-i18n="admin.config_proto.slash_hint">Use "/" to separate options.</div>
+        </div>
+        <div class="config-field" style="margin-top:12px;">
+          <label class="field-label" data-i18n="admin.config_proto.louver_opening_config">Louver Opening Config</label>
+          <div class="single-choice-row" data-louver-opening-config>
+            <button type="button" class="single-choice" data-value="None">None</button>
+            <button type="button" class="single-choice active" data-value="Both">Both</button>
+            <button type="button" class="single-choice" data-value="1way">1way</button>
+            <button type="button" class="single-choice" data-value="2way">2way</button>
+          </div>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="card-title" data-i18n="admin.config_proto.profile_selection">Profile Selection</div>
+        <div class="profile-panel">
+          <div class="profile-materials"></div>
+          <div class="profile-categories">
+            <button class="profile-tab active" data-category="Stile">
+              <span class="profile-tab-icon">▦</span>
+              <span data-i18n="admin.profile.category.stiles">STILES</span>
+            </button>
+            <button class="profile-tab" data-category="Frame">
+              <span class="profile-tab-icon">⬚</span>
+              <span data-i18n="admin.profile.category.frame">FRAME</span>
+            </button>
+            <button class="profile-tab" data-category="Louver">
+              <span class="profile-tab-icon">▥</span>
+              <span data-i18n="admin.profile.category.louver">LOUVER</span>
+            </button>
+            <button class="profile-tab" data-category="TPost">
+              <span class="profile-tab-icon">▤</span>
+              <span data-i18n="admin.profile.category.tpost">TPOST</span>
+            </button>
+          </div>
+          <div class="profile-groups" data-profile-groups></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="/js/api.js"></script>
+  <script src="/i18n/admin-i18n.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/admin-config-prototype.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{if(window.adminInit)window.adminInit()})</script>
+</body>
+</html>

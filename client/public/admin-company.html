@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-layout" data-page="admin-company">
+  <aside class="sidebar">
+    <img class="brand-logo" src="/images/logo.png" alt="Kenda">
+    <div class="small" data-i18n="admin.sidebar.system">ShutterPro System</div>
+    <div style="height:12px"></div>
+    <a class="nav-item active" href="/admin-company.html" data-i18n="admin.sidebar.company">Company</a>
+    <a class="nav-item" href="/admin-user.html" data-i18n="admin.sidebar.user_config">User Config</a>
+    <a class="nav-item" href="/admin-profile.html" data-i18n="admin.sidebar.profile_config">Profile Config</a>
+    <a class="nav-item" href="/admin-order-list.html" data-i18n="admin.sidebar.order_list">Order List</a>
+    <a class="nav-item" href="/admin-remakes.html" data-i18n="admin.sidebar.remakes">Remakes</a>
+    <a class="nav-item" href="/admin-excel.html" data-i18n="admin.sidebar.excel_config">Excel Export Config</a>
+    <a class="nav-item" href="/admin-config-prototype.html" data-i18n="admin.sidebar.config_prototype">Config Prototype</a>
+    <div class="user-card">
+      <div class="icon-btn">👤</div>
+      <div>
+        <div data-i18n="admin.sidebar.administrator">Administrator</div>
+        <div>admin@system.com</div>
+      </div>
+    </div>
+  </aside>
+  <main class="content">
+    <div class="page-header">
+      <h2 data-i18n="admin.company.title">Company</h2>
+      <button class="primary" data-i18n="admin.common.add">+ Add</button>
+    </div>
+    <div class="table-card">
+      <div class="table-head">
+        <input class="search" data-i18n-placeholder="admin.common.search_placeholder" placeholder="Search......">
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th data-i18n="admin.company.col.name">Name</th>
+            <th data-i18n="admin.company.col.code">Company Code</th>
+            <th data-i18n="admin.company.col.contact">Contact</th>
+            <th data-i18n="admin.company.col.street">Street</th>
+            <th data-i18n="admin.company.col.city">city</th>
+            <th data-i18n="admin.company.col.state">State</th>
+            <th data-i18n="admin.company.col.zip">zip</th>
+            <th data-i18n="admin.company.col.country">Country</th>
+            <th data-i18n="admin.company.col.address_type">AddressType</th>
+            <th data-i18n="admin.company.col.phone">Phone</th>
+            <th data-i18n="admin.company.col.fax">Fax</th>
+            <th data-i18n="admin.common.actions">Actions</th>
+          </tr>
+        </thead>
+        <tbody data-company-list></tbody>
+      </table>
+    </div>
+  </main>
+  <script src="/js/api.js"></script>
+  <script src="/i18n/admin-i18n.js"></script>
+  <script src="/js/admin.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{if(window.adminInit)window.adminInit()})</script>
+</body>
+</html>

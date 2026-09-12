@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b2236"/>
+      <stop offset="0.55" stop-color="#11314f"/>
+      <stop offset="1" stop-color="#0b1f33"/>
+    </linearGradient>
+    <linearGradient id="frameOuter" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d4e3ef"/>
+      <stop offset="1" stop-color="#a9bfce"/>
+    </linearGradient>
+    <linearGradient id="frameInner" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fefefe"/>
+      <stop offset="1" stop-color="#ecf3f9"/>
+    </linearGradient>
+    <linearGradient id="slatBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#35b5f0"/>
+      <stop offset="1" stop-color="#0d7fc2"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7f4ff" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#b9d6ea" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2.2" stdDeviation="2" flood-color="#04101b" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect x="3" y="3" width="58" height="58" rx="14" fill="url(#bg)"/>
+  <rect x="10" y="9" width="44" height="46" rx="10" fill="url(#frameOuter)" filter="url(#shadow)"/>
+  <rect x="12.2" y="11.2" width="39.6" height="41.6" rx="8" fill="url(#frameInner)"/>
+  <rect x="14.5" y="13.5" width="22" height="37" rx="4.5" fill="url(#glass)" stroke="#9ab2c5" stroke-width="1"/>
+  <rect x="16.6" y="16.1" width="17.8" height="3.2" rx="1.6" fill="#f4f9fd"/>
+  <rect x="16.6" y="21.7" width="17.8" height="3.2" rx="1.6" fill="#e9f2f9"/>
+  <rect x="16.6" y="27.3" width="17.8" height="3.2" rx="1.6" fill="#dfeaf4"/>
+  <rect x="16.6" y="32.9" width="17.8" height="3.2" rx="1.6" fill="#d6e4f0"/>
+  <rect x="16.6" y="38.5" width="17.8" height="3.2" rx="1.6" fill="#cdddea"/>
+  <rect x="16.6" y="44.1" width="17.8" height="3.2" rx="1.6" fill="#c5d7e6"/>
+  <rect x="39.6" y="13.5" width="3.4" height="37" rx="1.7" fill="url(#slatBlue)"/>
+  <rect x="44.4" y="13.5" width="3.4" height="37" rx="1.7" fill="url(#slatBlue)"/>
+  <rect x="49.2" y="13.5" width="3.4" height="37" rx="1.7" fill="url(#slatBlue)"/>
+  <path d="M14.6 16.2c5.4 1.6 12.3 1.7 19.8.1" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1" fill="none"/>
+  <path d="M39.8 14.8c4.4 1.6 8.8 1.6 12.9 0" stroke="#74cbfb" stroke-opacity="0.55" stroke-width="1" fill="none"/>
+</svg>

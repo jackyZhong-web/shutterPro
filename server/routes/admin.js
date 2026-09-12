@@ -1,0 +1,27 @@
+const express=require("express")
+const adminController=require("../controllers/adminController")
+
+const router=express.Router()
+
+router.get("/companies",adminController.getCompanies)
+router.post("/companies",adminController.createCompany)
+router.put("/companies/:id",adminController.updateCompany)
+router.delete("/companies/:id",adminController.deleteCompany)
+router.get("/users",adminController.getUsers)
+router.post("/users",adminController.createUser)
+router.put("/users/:id",adminController.updateUser)
+router.delete("/users/:id",adminController.deleteUser)
+router.get("/profiles",adminController.getProfiles)
+router.post("/profiles",adminController.createProfile)
+router.put("/profiles/:id",adminController.updateProfile)
+router.delete("/profiles/:id",adminController.deleteProfile)
+router.get("/colors",adminController.getColors)
+router.post("/colors",adminController.createColor)
+router.put("/colors/:id",adminController.updateColor)
+router.delete("/colors/:id",adminController.deleteColor)
+router.get("/company-config",adminController.getCompanyConfig)
+router.put("/company-config/:companyId",adminController.upsertCompanyConfig)
+router.get("/excel-export-config",adminController.getExcelExport)
+router.put("/excel-export-config",adminController.upsertExcelExport)
+
+module.exports=router

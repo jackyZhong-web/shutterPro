@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/orders.css">
+  <link rel="stylesheet" href="/css/cart.css">
+  <link rel="stylesheet" href="/css/cart-drawer.css">
+</head>
+<body data-page="cart">
+  <div class="content">
+    <div class="cart-summary">
+      <div class="summary-left">
+        <div class="summary-row"><span>Company:</span><strong data-cart-company>-</strong></div>
+        <div class="summary-row"><span>OrderNo:</span><strong data-cart-orderno></strong></div>
+        <div class="summary-row"><span>Order Reference:</span><strong><input class="cart-ref" placeholder="Optional" data-order-reference></strong></div>
+        <div class="summary-row"><span>PO:</span><strong><input class="cart-ref" placeholder="Required" data-order-po maxlength="50"></strong></div>
+        <div class="summary-row"><span>Side Mark:</span><strong><input class="cart-ref" placeholder="Required" data-order-side-mark maxlength="50"></strong></div>
+        <div class="summary-row"><span>Date:</span><strong data-cart-date>-</strong></div>
+        <div class="summary-row"><span data-area-label>SQM:</span><strong data-cart-sqm>0.00m²</strong></div>
+        <div class="summary-row"><span></span><strong class="cart-meta-error" data-cart-meta-error></strong></div>
+      </div>
+      <div class="summary-actions">
+        <button class="primary" data-cart-send>Send</button>
+        <button class="light" data-cart-save>Save</button>
+      </div>
+    </div>
+    <div class="details-list" data-cart-lines></div>
+    <div class="empty-card" data-cart-empty style="display:none">
+      <div style="font-size:28px">🧺</div>
+      <div style="margin-top:8px">Your cart is empty</div>
+      <div class="small">Go to the configurator to add shutters.</div>
+    </div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/cart-drawer.js"></script>
+  <script src="/js/units.js"></script>
+  <script src="/js/cart.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{if(window.cartDrawerInit)window.cartDrawerInit();if(window.cartInit)window.cartInit()})</script>
+</body>
+</html>

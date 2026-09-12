@@ -1,0 +1,76 @@
+.cart-summary{background:#fff;border:1px solid #eef2f6;border-radius:12px;padding:16px;display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}
+.summary-left{display:grid;grid-template-columns:auto 1fr;column-gap:16px;row-gap:8px;font-size:13px;color:#7d8a96}
+.summary-left strong{color:#2b2f33;display:block}
+.summary-row{display:contents}
+.summary-actions{display:flex;flex-direction:column;gap:8px;min-width:180px;margin-left:auto}
+.summary-actions button.is-loading{opacity:.8}
+.summary-actions button.is-success{background:var(--theme-primary);color:#fff}
+.cart-ref{width:360px;max-width:100%;padding:6px 10px;font-size:13px}
+.cart-ref.input-error{border-color:#c0392b}
+.cart-meta-error{font-size:12px;color:#c0392b;min-height:16px}
+.cart-lines{display:flex;flex-direction:column;gap:16px}
+.detail-item{background:#fff;border:1px solid #eef2f6;border-radius:12px}
+.detail-header{padding:12px 14px;border-bottom:1px solid #f1f3f6}
+.detail-amount{margin-left:auto;font-weight:700;color:#2b2f33}
+.detail-actions{margin-left:10px;display:flex;gap:8px}
+.detail-grid{display:flex;gap:18px;padding:12px 14px;overflow-x:auto;overflow-y:hidden;align-items:flex-start;height:190px}
+.detail-grid::-webkit-scrollbar{height:6px}
+.detail-grid::-webkit-scrollbar-thumb{background:rgba(15,23,42,0.12);border-radius:999px}
+.detail-grid::-webkit-scrollbar-track{background:transparent}
+.detail-col{flex:0 0 auto;font-size:12px;color:#7d8a96;display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-start;row-gap:8px;column-gap:24px;height:160px;width:max-content;padding-top:20px}
+.detail-col > *{width:120px}
+.detail-col .group-title{margin-top:-20px}
+.detail-col strong{color:#2b2f33;font-size:12px}
+.detail-col .group-title{font-size:11px;color:#3b82a0;font-weight:700}
+.detail-header .detail-actions{margin-left:auto;display:flex;gap:8px}
+.detail-header .detail-amount{margin-left:auto;font-weight:700;color:#2b2f33}
+.detail-header .detail-actions + .detail-amount{margin-left:0}
+.cart-line-actions{display:flex;gap:8px}
+.cart-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1000}
+.cart-modal.is-open{display:flex}
+.cart-modal-backdrop{position:absolute;inset:0;background:rgba(15,23,42,0.4)}
+.cart-modal-card{position:relative;background:#fff;border-radius:12px;border:1px solid #eef2f6;min-width:360px;max-width:520px;width:90%;box-shadow:0 16px 40px rgba(15,23,42,.2)}
+.cart-modal-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #eef2f6}
+.cart-modal-body{padding:16px}
+.cart-modal-actions{display:flex;justify-content:flex-end;gap:10px;padding:0 16px 16px}
+.cart-modal-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cart-modal-form .field-full{grid-column:1/-1}
+.cart-modal-error{color:#c0392b;font-size:12px;margin-bottom:8px}
+.cart-embed .topbar{display:none}
+.cart-embed .content{padding-top:16px}
+.shake{animation:shake .35s}
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-4px)}
+  40%{transform:translateX(4px)}
+  60%{transform:translateX(-3px)}
+  80%{transform:translateX(3px)}
+}
+
+@media (max-width:1440px){
+  .cart-summary{padding:14px}
+  .summary-left{column-gap:12px}
+  .summary-actions{min-width:164px}
+  .cart-ref{width:320px}
+  .detail-grid{gap:14px;height:182px}
+  .detail-col{column-gap:20px;height:152px}
+  .detail-col > *{width:108px}
+}
+
+@media (max-width:1280px){
+  .cart-summary{align-items:flex-start;flex-wrap:wrap}
+  .summary-left{grid-template-columns:1fr 1fr;row-gap:6px}
+  .summary-actions{width:100%;min-width:0;flex-direction:row;justify-content:flex-end}
+  .cart-ref{width:280px}
+  .detail-header{flex-wrap:wrap}
+  .detail-grid{gap:12px;height:176px}
+  .detail-col{column-gap:16px}
+  .detail-col > *{width:100px}
+  .cart-modal-card{min-width:320px}
+}
+
+@media (max-width:1180px){
+  .detail-grid{height:auto}
+  .detail-col{height:auto;flex-wrap:nowrap;padding-top:0}
+  .detail-col .group-title{margin-top:0}
+}

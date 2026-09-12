@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/orders.css">
+  <link rel="stylesheet" href="/css/cart-drawer.css">
+  <link rel="stylesheet" href="/css/user-menu.css">
+</head>
+<body>
+  <div class="topbar">
+    <img class="brand-logo" src="/images/logo.png" alt="Kenda">
+    <div class="nav-links nav-pills">
+      <a href="/user-dashboard.html"><span class="nav-icon">⌂</span>Dashboard</a>
+      <a href="/configurator.html"><span class="nav-icon">⚙</span>Configurator</a>
+      <a class="active" href="/order-history.html"><span class="nav-icon">🧾</span>Order History</a>
+    </div>
+    <div class="topbar-actions">
+      <div class="unit-toggle" data-unit-toggle>
+        <button type="button" data-unit="mm">mm</button>
+        <button type="button" data-unit="inch">in</button>
+      </div>
+      <a class="cart-icon" href="/cart.html" style="visibility:hidden;pointer-events:none">🛒<span class="badge">0</span></a>
+      <div class="user-menu" data-user-menu>
+        <button class="user-avatar" type="button" data-user-avatar>👤</button>
+        <div class="user-menu-panel">
+          <button class="user-menu-item" type="button" data-user-action="password">Change Password</button>
+          <button class="user-menu-item" type="button" data-user-action="logout">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <h2>My Order History</h2>
+    <div class="empty-card">
+      <div style="font-size:28px">📦</div>
+      <div style="margin-top:8px">No orders yet</div>
+      <div class="small">Go to the configurator to start building your shutters.</div>
+    </div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/cart-drawer.js"></script>
+  <script src="/js/user-menu.js"></script>
+  <script src="/js/units.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      if(window.cartDrawerInit)window.cartDrawerInit()
+      if(window.userMenuInit)window.userMenuInit()
+      if(window.apiFetch){
+        window.apiFetch("/orders").then(res=>res?res.json():null).then(rows=>{
+          if(Array.isArray(rows)&&rows.length>0)location.href="/order-history.html"
+        })
+      }
+    })
+  </script>
+</body>
+</html>

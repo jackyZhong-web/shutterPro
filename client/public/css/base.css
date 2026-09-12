@@ -1,0 +1,11 @@
+@import "components.css";
+:root{--theme-primary:#10302b;--theme-primary-rgb:16,48,43;--theme-soft:#eef5f1;--theme-soft-alt:#e8f1ed;--theme-soft-strong:#ddeae5;--theme-scroll:#b9ccc5;--theme-scroll-hover:#93aea5}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,Helvetica,sans-serif;color:#2b2f33;background:#f6f7fb}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+[data-config-scroll],[data-dashboard-scroll]{scrollbar-width:thin;scrollbar-color:var(--theme-scroll) #f6f7fb}
+[data-config-scroll]::-webkit-scrollbar,[data-dashboard-scroll]::-webkit-scrollbar{width:10px}
+[data-config-scroll]::-webkit-scrollbar-track,[data-dashboard-scroll]::-webkit-scrollbar-track{background:#f6f7fb;border-radius:999px}
+[data-config-scroll]::-webkit-scrollbar-thumb,[data-dashboard-scroll]::-webkit-scrollbar-thumb{background:var(--theme-scroll);border-radius:999px;border:2px solid #f6f7fb}
+[data-config-scroll]::-webkit-scrollbar-thumb:hover,[data-dashboard-scroll]::-webkit-scrollbar-thumb:hover{background:var(--theme-scroll-hover)}

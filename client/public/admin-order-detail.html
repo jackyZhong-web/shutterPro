@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/orders.css">
+</head>
+<body class="admin-layout" data-page="admin-order-detail" data-allow-unit-toggle="1">
+  <aside class="sidebar">
+    <img class="brand-logo" src="/images/logo.png" alt="Kenda">
+    <div class="small" data-i18n="admin.sidebar.system">ShutterPro System</div>
+    <div style="height:12px"></div>
+    <a class="nav-item" href="/admin-company.html" data-i18n="admin.sidebar.company">Company</a>
+    <a class="nav-item" href="/admin-user.html" data-i18n="admin.sidebar.user_config">User Config</a>
+    <a class="nav-item" href="/admin-profile.html" data-i18n="admin.sidebar.profile_config">Profile Config</a>
+    <a class="nav-item active" href="/admin-order-list.html" data-i18n="admin.sidebar.order_list">Order List</a>
+    <a class="nav-item" href="/admin-remakes.html" data-i18n="admin.sidebar.remakes">Remakes</a>
+    <a class="nav-item" href="/admin-excel.html" data-i18n="admin.sidebar.excel_config">Excel Export Config</a>
+    <a class="nav-item" href="/admin-config-prototype.html" data-i18n="admin.sidebar.config_prototype">Config Prototype</a>
+    <div class="user-card">
+      <div class="icon-btn">👤</div>
+      <div>
+        <div data-i18n="admin.sidebar.administrator">Administrator</div>
+        <div>admin@system.com</div>
+      </div>
+    </div>
+  </aside>
+  <main class="content">
+    <div class="page-header">
+      <div>
+        <a class="ghost" href="/admin-order-list.html" data-i18n="admin.order_list.back">← Back to Order List</a>
+      </div>
+      <div class="right-actions">
+        <div class="unit-toggle" data-unit-toggle>
+          <button type="button" data-unit="mm">mm</button>
+          <button type="button" data-unit="inch">in</button>
+        </div>
+        <button class="ghost" type="button" data-order-print data-i18n="admin.order_detail.print">Print</button>
+      <button class="primary" data-order-export data-i18n="admin.order_list.export_excel">Export Excel</button>
+      </div>
+    </div>
+    <div class="order-card">
+      <h4 class="order-section-title" data-i18n="admin.order_list.order_info">Order Information</h4>
+      <div class="order-info" data-order-info></div>
+    </div>
+    <div class="order-card">
+      <h4 data-i18n="admin.order_list.admin_mark">Admin Mark</h4>
+      <div class="form-field">
+        <textarea data-order-mark rows="4" data-i18n-placeholder="admin.order_list.mark_placeholder" placeholder="Add notes for this order"></textarea>
+      </div>
+      <div class="right-actions">
+        <button class="primary" data-order-mark-save data-i18n="admin.order_list.save_mark">Save Mark</button>
+      </div>
+    </div>
+    <div class="order-card">
+      <div class="detail-header">
+        <strong data-i18n="admin.order_list.shutter_details">Shutter Details</strong>
+      </div>
+      <div class="details-list" data-order-lines></div>
+    </div>
+  </main>
+  <script src="/js/api.js"></script>
+  <script src="/js/units.js"></script>
+  <script src="/i18n/admin-i18n.js"></script>
+  <script src="/js/orders-common.js"></script>
+  <script src="/js/orders.js"></script>
+  <script src="/js/admin.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{if(window.adminInit)window.adminInit();if(window.ordersInit)window.ordersInit()})</script>
+</body>
+</html>

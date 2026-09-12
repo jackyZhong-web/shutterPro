@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/configurator.css">
+</head>
+<body data-page="order-line-edit">
+  <div class="content config-content">
+    <div id="configurator-mount"></div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/units.js"></script>
+  <script src="/js/panel-config-rules.js"></script>
+  <script src="/js/configurator.js"></script>
+  <script>
+    const mount=document.getElementById("configurator-mount")
+    fetch("/configurator.html").then(res=>res.text()).then(html=>{
+      const doc=new DOMParser().parseFromString(html,"text/html")
+      const layout=doc.querySelector(".config-layout")
+      if(layout&&mount){
+        mount.appendChild(layout)
+        const addBtn=mount.querySelector("[data-add-cart]")
+        if(addBtn){
+          addBtn.dataset.addCartLabel="Save"
+          addBtn.dataset.addCartLoading="Saving..."
+          addBtn.dataset.addCartSuccess="Saved ✓"
+          addBtn.textContent="Save"
+        }
+        const hint=mount.querySelector("[data-drawing-hint]")
+        if(hint)hint.textContent="Upload drawing file (PDF/PNG/JPG)"
+      }
+      if(window.configuratorInit)window.configuratorInit()
+    })
+  </script>
+</body>
+</html>

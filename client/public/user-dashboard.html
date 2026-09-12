@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/orders.css">
+  <link rel="stylesheet" href="/css/cart-drawer.css">
+  <link rel="stylesheet" href="/css/user-dashboard.css">
+  <link rel="stylesheet" href="/css/user-menu.css">
+</head>
+<body data-page="user-dashboard">
+  <div class="topbar">
+    <img class="brand-logo" src="/images/logo.png" alt="Kenda">
+    <div class="nav-links nav-pills">
+      <a class="active" href="/user-dashboard.html"><span class="nav-icon">⌂</span>Dashboard</a>
+      <a href="/configurator.html"><span class="nav-icon">⚙</span>Configurator</a>
+      <a href="/order-history.html"><span class="nav-icon">🧾</span>Order History</a>
+      <a href="/remakes.html"><span class="nav-icon">🛠</span>Remakes</a>
+    </div>
+    <div class="topbar-actions">
+      <div class="unit-toggle" data-unit-toggle>
+        <button type="button" data-unit="mm">mm</button>
+        <button type="button" data-unit="inch">in</button>
+      </div>
+      <a class="cart-icon" href="/cart.html" style="visibility:hidden;pointer-events:none">🛒<span class="badge">0</span></a>
+      <div class="user-menu" data-user-menu>
+        <button class="user-avatar" type="button" data-user-avatar>👤</button>
+        <div class="user-menu-panel">
+          <button class="user-menu-item" type="button" data-user-action="password">Change Password</button>
+          <button class="user-menu-item" type="button" data-user-action="logout">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content dashboard-content" data-dashboard-scroll>
+    <div class="dashboard-hero">
+      <div>
+        <div class="small" data-dashboard-welcome>Welcome back</div>
+        <h2>Order Intelligence Overview</h2>
+        <div class="small">Track your activity, spot trends, and pick the next best day to submit.</div>
+      </div>
+      <div class="hero-actions">
+        <a href="/configurator.html"><button class="primary">New Order</button></a>
+        <a href="/order-history.html"><button class="ghost">View History</button></a>
+      </div>
+    </div>
+    <div class="dashboard-filters option-row segmented">
+      <button class="toggle small active" type="button" data-filter="all">All</button>
+      <button class="toggle small" type="button" data-filter="submitted">Submitted</button>
+      <button class="toggle small" type="button" data-filter="draft">Drafts</button>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Orders (30d)</div>
+        <div class="kpi-value" data-kpi-orders>0</div>
+        <div class="kpi-note" data-kpi-orders-note>—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Submitted</div>
+        <div class="kpi-value" data-kpi-submitted>0</div>
+        <div class="kpi-note" data-kpi-submitted-note>—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Avg Area</div>
+        <div class="kpi-value" data-kpi-avg>0</div>
+        <div class="kpi-note" data-kpi-avg-note>—</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Drafts</div>
+        <div class="kpi-value" data-kpi-drafts>0</div>
+        <div class="kpi-note" data-kpi-drafts-note>—</div>
+      </div>
+    </div>
+    <div class="dashboard-grid">
+      <div class="table-card chart-card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">30-Day Activity</div>
+            <div class="card-sub">Orders and area volume by day</div>
+          </div>
+          <div class="card-actions option-row segmented">
+            <button class="toggle small" type="button" data-range="7">7d</button>
+            <button class="toggle small active" type="button" data-range="30">30d</button>
+          </div>
+        </div>
+        <div class="chart-wrap" data-activity-chart></div>
+        <div class="chart-tooltip" data-chart-tooltip></div>
+        <div class="chart-legend">
+          <div><span class="legend-dot legend-orders"></span>Orders</div>
+          <div><span class="legend-dot legend-area"></span>Area</div>
+          <div class="chart-insight" data-chart-insight>—</div>
+        </div>
+      </div>
+      <div class="table-card calendar-card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Calendar Focus</div>
+            <div class="card-sub">Click a day to see detail insights</div>
+          </div>
+          <div class="calendar-actions">
+            <button class="ghost small" type="button" data-cal-prev>←</button>
+            <div class="calendar-month" data-cal-month></div>
+            <button class="ghost small" type="button" data-cal-next>→</button>
+          </div>
+        </div>
+        <div class="calendar-grid" data-calendar></div>
+        <div class="calendar-detail">
+          <div class="detail-title" data-selected-date>—</div>
+          <div class="detail-metrics">
+            <div class="metric">
+              <div class="metric-label">Orders</div>
+              <div class="metric-value" data-selected-orders>0</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Area</div>
+              <div class="metric-value" data-selected-area>0</div>
+            </div>
+          </div>
+          <div class="detail-list" data-selected-list></div>
+        </div>
+      </div>
+      <div class="table-card recent-card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Recent Orders</div>
+            <div class="card-sub">Continue work or submit orders</div>
+          </div>
+          <a class="link" href="/order-history.html">View all</a>
+        </div>
+        <div class="recent-list" data-recent-list></div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/cart-drawer.js"></script>
+  <script src="/js/units.js"></script>
+  <script src="/js/user-menu.js"></script>
+  <script src="/js/user-dashboard.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{if(window.cartDrawerInit)window.cartDrawerInit();if(window.userMenuInit)window.userMenuInit();if(window.userDashboardInit)window.userDashboardInit()})</script>
+</body>
+</html>

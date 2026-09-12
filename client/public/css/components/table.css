@@ -1,0 +1,7 @@
+.table{width:100%;border-collapse:collapse;font-size:13px}
+.table th,.table td{padding:12px;border-bottom:1px solid #eef2f6;text-align:left;color:#5c6670}
+.table th{font-weight:700;color:#88929c;font-size:12px;text-transform:none}
+.table td.actions{display:flex;gap:10px;align-items:center}
+.icon-btn{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;background:var(--theme-soft);color:var(--theme-primary);cursor:pointer}
+.table-card{background:#fff;border:1px solid #eef2f6;border-radius:12px;padding:18px}
+.table-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}

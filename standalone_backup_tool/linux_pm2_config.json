@@ -1,0 +1,23 @@
+{
+  "backupName": "shutterpro",
+  "outputRoot": "/opt/shutterpro-backup/packages",
+  "tempRoot": "/opt/shutterpro-backup/work",
+  "mysqldumpPath": "/usr/bin/mysqldump",
+  "tarPath": "/bin/tar",
+  "mysql": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "database": "shutterpro",
+    "user": "root",
+    "password": "123456"
+  },
+  "uploads": {
+    "sourcePath": "/opt/shutterpro/server/uploads"
+  },
+  "schedule": {
+    "weekday": 0,
+    "hour": 20,
+    "minute": 0,
+    "runOnStart": true
+  }
+}

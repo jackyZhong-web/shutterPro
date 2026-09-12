@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link rel="stylesheet" href="/css/orders.css">
+  <link rel="stylesheet" href="/css/remakes.css">
+</head>
+<body class="admin-layout" data-page="admin-remakes">
+  <aside class="sidebar">
+    <img class="brand-logo" src="/images/logo.png" alt="Kenda">
+    <div class="small" style="font-size:14px;" data-i18n="admin.sidebar.system">ShutterPro System</div>
+    <div style="height:12px"></div>
+    <a class="nav-item" href="/admin-company.html" data-i18n="admin.sidebar.company">Company</a>
+    <a class="nav-item" href="/admin-user.html" data-i18n="admin.sidebar.user_config">User Config</a>
+    <a class="nav-item" href="/admin-profile.html" data-i18n="admin.sidebar.profile_config">Profile Config</a>
+    <a class="nav-item" href="/admin-order-list.html" data-i18n="admin.sidebar.order_list">Order List</a>
+    <a class="nav-item active" href="/admin-remakes.html" data-i18n="admin.sidebar.remakes">Remakes</a>
+    <a class="nav-item" href="/admin-excel.html" data-i18n="admin.sidebar.excel_config">Excel Export Config</a>
+    <a class="nav-item" href="/admin-config-prototype.html" data-i18n="admin.sidebar.config_prototype">Config Prototype</a>
+    <div class="user-card">
+      <div class="icon-btn">👤</div>
+      <div>
+        <div data-i18n="admin.sidebar.administrator">Administrator</div>
+        <div>admin@system.com</div>
+      </div>
+    </div>
+  </aside>
+  <main class="content">
+    <div class="page-header">
+      <h2 data-i18n="admin.remakes.title">Remakes</h2>
+    </div>
+    <div class="table-card">
+      <div class="filters remake-filters">
+        <input data-i18n-placeholder="admin.remakes.search" placeholder="Search Remake/Order/Customer" data-remake-search>
+        <input data-i18n-placeholder="admin.remakes.select_date" placeholder="Select date" type="date" data-remake-date>
+      </div>
+      <div class="filter-help" data-i18n="admin.remakes.help">Search supports * as AND (e.g. RM01*Alice). Date filters by day; use YYYY-MM-DD.</div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th data-i18n="admin.remakes.col.remake_no">Remake No</th>
+            <th data-i18n="admin.remakes.col.order_no">Order No</th>
+            <th data-i18n="admin.remakes.col.customer">Customer</th>
+            <th data-i18n="admin.remakes.col.company">Company</th>
+            <th data-i18n="admin.remakes.col.type">Type</th>
+            <th data-i18n="admin.remakes.col.status">Status</th>
+            <th data-i18n="admin.remakes.col.date">Date</th>
+            <th data-i18n="admin.remakes.col.note">Note</th>
+            <th data-i18n="admin.remakes.col.comment">Comment</th>
+            <th data-i18n="admin.remakes.col.action">Action</th>
+          </tr>
+        </thead>
+        <tbody data-remake-list></tbody>
+      </table>
+    </div>
+    <div class="order-edit-modal" data-remake-admin-modal>
+      <div class="order-edit-backdrop" data-remake-admin-close></div>
+      <div class="order-edit-panel">
+        <div class="remake-panel">
+          <div class="remake-header">
+            <div>
+              <div class="small" data-i18n="admin.remakes.detail">Remake Detail</div>
+              <h3 data-admin-remake-no>RM01-BB-00001</h3>
+            </div>
+            <button class="ghost" type="button" data-remake-admin-close data-i18n="admin.common.close">Close</button>
+          </div>
+          <div class="remake-body">
+            <div class="order-info">
+              <div>Order No<strong>BB-00001</strong></div>
+              <div>Customer<strong>Alice</strong></div>
+              <div>Company<strong>Bright Blinds</strong></div>
+              <div>Status<strong data-admin-remake-status><span class="status-pill status-sent">Sent</span></strong></div>
+            </div>
+            <div class="form-field">
+              <label data-i18n="admin.remakes.selected_shutter">Selected Shutter</label>
+              <div class="table-input" data-admin-remake-line>Shutter #2 · Kitchen · Café style</div>
+            </div>
+            <div class="form-field">
+              <label data-i18n="admin.remakes.remake_type">Remake Type</label>
+              <div class="remake-types" data-admin-remake-types></div>
+            </div>
+            <div class="form-field">
+              <label data-i18n="admin.remakes.reference_file">Reference File</label>
+              <div class="table-input" data-admin-remake-file></div>
+            </div>
+            <div class="form-field">
+              <label data-i18n="admin.remakes.user_note">User Note</label>
+              <div class="table-input" data-admin-remake-note>The left louver is damaged, please resend.</div>
+            </div>
+            <div class="form-field">
+              <label data-i18n="admin.remakes.refuse_comment">Refuse Comment</label>
+              <textarea rows="3" data-i18n-placeholder="admin.remakes.refuse_placeholder" placeholder="Explain why this remake is refused..." data-refuse-comment></textarea>
+            </div>
+          </div>
+          <div class="remake-actions" data-admin-remake-actions>
+            <button class="ghost" type="button" data-admin-remake-refuse data-i18n="admin.remakes.refuse">Refuse</button>
+            <button class="primary" type="button" data-admin-remake-approve data-i18n="admin.remakes.approve">Approve</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="/js/api.js"></script>
+  <script src="/i18n/admin-i18n.js"></script>
+  <script src="/js/admin.js"></script>
+  <script src="/js/remakes.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{if(window.adminInit)window.adminInit()})</script>
+</body>
+</html>

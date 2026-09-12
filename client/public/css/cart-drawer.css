@@ -1,0 +1,10 @@
+.cart-drawer{position:fixed;top:60px;left:0;right:0;bottom:0;z-index:1200;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.cart-drawer.is-open{opacity:1;pointer-events:auto}
+.cart-drawer-backdrop{position:absolute;inset:0;background:rgba(15,23,42,0.35);opacity:0;transition:opacity .25s ease}
+.cart-drawer.is-open .cart-drawer-backdrop{opacity:1}
+.cart-drawer-panel{position:absolute;top:0;right:0;height:100%;width:860px;max-width:98vw;background:#fff;border-left:1px solid #eef2f6;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .25s ease}
+.cart-drawer.is-open .cart-drawer-panel{transform:translateX(0)}
+.cart-drawer-header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid #eef2f6}
+.cart-drawer-title{font-weight:700}
+.cart-drawer-body{flex:1;overflow:hidden;padding:0}
+.cart-drawer-frame{border:0;width:100%;height:100%}

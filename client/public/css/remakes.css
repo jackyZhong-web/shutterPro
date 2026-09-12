@@ -1,0 +1,38 @@
+.remake-panel{display:flex;flex-direction:column;height:100%}
+.remake-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid #eef2f6}
+.remake-header h3{margin:6px 0 0;font-size:18px;color:#2b2f33}
+.remake-body{padding:18px 22px;display:flex;flex-direction:column;gap:16px;overflow:auto}
+.remake-types{display:flex;flex-wrap:wrap;gap:10px}
+.remake-chip{display:flex;align-items:center;gap:8px;border:1px solid #e6edf3;border-radius:999px;padding:6px 12px;font-size:12px;color:#2b2f33;background:#fff}
+.remake-chip input{margin:0}
+.remake-upload{position:relative}
+.remake-upload input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.remake-upload-box{border:1px dashed #d7e0ea;border-radius:12px;padding:18px;text-align:center;color:#7d8a96;background:#f9fbfd}
+.remake-upload-box.is-selected{border-color:var(--theme-primary);color:var(--theme-primary);background:var(--theme-soft-alt)}
+.remake-upload-meta{margin-top:8px;display:flex;align-items:center;gap:10px}
+.remake-upload-name{font-size:12px;color:#2a3441}
+.remake-error{flex:1;font-size:12px;color:#c0392b}
+.remake-actions{align-items:center}
+.link-button{border:none;background:none;padding:0;color:var(--theme-primary);font-weight:600;cursor:pointer}
+.remake-actions{display:flex;justify-content:flex-end;gap:10px;padding:16px 22px;border-top:1px solid #eef2f6}
+.remake-panel .form-field textarea{background:#f7f9fb;border:1px solid #e5e7ef;border-radius:10px;padding:9px 12px;font-size:14px;color:#2b2f33;resize:vertical}
+.remake-panel .form-field textarea:focus{outline:none;border-color:var(--theme-primary);box-shadow:0 0 0 2px rgba(var(--theme-primary-rgb),0.12)}
+.remake-panel .table-input{border:1px solid #e6edf3;border-radius:10px;padding:10px 12px;background:#fff;color:#2b2f33;font-size:12px}
+.remake-panel .order-info{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.status-pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:11px;font-weight:600}
+.status-sent{background:var(--theme-soft-strong);color:var(--theme-primary)}
+.status-approved{background:#e6f6ee;color:#1f9d55}
+.status-refused{background:#fdeceb;color:#c0392b}
+.text-ellipsis{display:inline-block;max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom}
+.remake-actions .is-success{background:var(--theme-primary);color:#fff}
+.remake-filters input{width:320px}
+
+@media (max-width:1440px){
+  .text-ellipsis{max-width:200px}
+  .remake-filters input{width:280px}
+}
+
+@media (max-width:1280px){
+  .remake-filters input{width:220px}
+  .remake-panel .order-info{grid-template-columns:1fr}
+}

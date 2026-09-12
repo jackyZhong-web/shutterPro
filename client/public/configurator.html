@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/configurator.css">
+  <link rel="stylesheet" href="/css/cart-drawer.css">
+  <link rel="stylesheet" href="/css/user-menu.css">
+</head>
+<body data-page="configurator">
+  <div class="topbar">
+    <img class="brand-logo" src="/images/logo.png" alt="Kenda">
+    <div class="nav-links nav-pills">
+      <a href="/user-dashboard.html"><span class="nav-icon">⌂</span>Dashboard</a>
+      <a class="active" href="/configurator.html"><span class="nav-icon">⚙</span>Configurator</a>
+      <a href="/order-history.html"><span class="nav-icon">🧾</span>Order History</a>
+      <a href="/remakes.html"><span class="nav-icon">🛠</span>Remakes</a>
+    </div>
+    <div class="topbar-actions">
+      <div class="unit-toggle" data-unit-toggle>
+        <button type="button" data-unit="mm">mm</button>
+        <button type="button" data-unit="inch">in</button>
+      </div>
+      <a class="cart-icon" href="/cart.html">🛒<span class="badge">0</span></a>
+      <div class="user-menu" data-user-menu>
+        <button class="user-avatar" type="button" data-user-avatar>👤</button>
+        <div class="user-menu-panel">
+          <button class="user-menu-item" type="button" data-user-action="password">Change Password</button>
+          <button class="user-menu-item" type="button" data-user-action="logout">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content config-content" data-config-scroll>
+    <div class="config-layout">
+      <aside class="config-sidebar">
+        <a class="active" href="#general">General</a>
+        <a href="#structure">Structure</a>
+        <a href="#louvers">Louvers</a>
+        <a href="#stile">Stile&TPost</a>
+        <a href="#frames">Frames</a>
+        <a href="#finish">Finish</a>
+        <a href="#others" data-others-link>Others</a>
+      </aside>
+      <section class="config-main">
+        <div class="config-card" id="general">
+          <h4><span class="section-badge badge-a">A</span> General</h4>
+          <div class="grid-2">
+            <div class="form-field">
+              <label>Room</label>
+              <input type="text" placeholder="e.g. Bedroom">
+            </div>
+            <div class="form-field">
+              <label>Product</label>
+              <div class="option-row segmented" data-segmented="product"></div>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Style</label>
+            <div class="option-row" data-style-row>
+              <button class="toggle style-tile" data-style data-value="Full Height">
+                <span class="style-thumb" aria-hidden="true">
+                  <svg viewBox="0 0 48 32" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="24" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <rect x="26" y="4" width="20" height="24" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <line x1="4" y1="9" x2="20" y2="9" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="4" y1="14" x2="20" y2="14" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="4" y1="19" x2="20" y2="19" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="28" y1="9" x2="44" y2="9" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="28" y1="14" x2="44" y2="14" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="28" y1="19" x2="44" y2="19" stroke="#2a2f33" stroke-width="1"/>
+                  </svg>
+                </span>
+                <span class="style-label">Full Height</span>
+              </button>
+              <button class="toggle style-tile" data-style data-value="Tier on Tier">
+                <span class="style-thumb" aria-hidden="true">
+                  <svg viewBox="0 0 48 32" aria-hidden="true">
+                    <rect x="4" y="4" width="18" height="10" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <rect x="4" y="18" width="18" height="10" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <rect x="26" y="4" width="18" height="10" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <rect x="26" y="18" width="18" height="10" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <line x1="6" y1="9" x2="20" y2="9" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="28" y1="9" x2="42" y2="9" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="6" y1="23" x2="20" y2="23" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="28" y1="23" x2="42" y2="23" stroke="#2a2f33" stroke-width="1"/>
+                  </svg>
+                </span>
+                <span class="style-label">Tier on Tier(Double Hung)</span>
+              </button>
+              <button class="toggle style-tile" data-style data-value="Café style">
+                <span class="style-thumb" aria-hidden="true">
+                  <svg viewBox="0 0 48 32" aria-hidden="true">
+                    <rect x="4" y="16" width="18" height="12" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <rect x="26" y="16" width="18" height="12" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <line x1="6" y1="22" x2="20" y2="22" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="28" y1="22" x2="42" y2="22" stroke="#2a2f33" stroke-width="1"/>
+                  </svg>
+                </span>
+                <span class="style-label">Café style</span>
+              </button>
+              <button class="toggle style-tile" data-style data-value="Bi-Fold Track">
+                <span class="style-thumb" aria-hidden="true">
+                  <svg viewBox="0 0 48 32" aria-hidden="true">
+                    <rect x="6" y="6" width="12" height="20" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <rect x="20" y="6" width="12" height="20" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <rect x="34" y="6" width="8" height="20" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <line x1="8" y1="12" x2="16" y2="12" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="22" y1="12" x2="30" y2="12" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="36" y1="12" x2="40" y2="12" stroke="#2a2f33" stroke-width="1"/>
+                  </svg>
+                </span>
+                <span class="style-label">Bi-Fold Track</span>
+              </button>
+              <button class="toggle style-tile" data-style data-value="Bypass Track">
+                <span class="style-thumb" aria-hidden="true">
+                  <svg viewBox="0 0 48 32" aria-hidden="true">
+                    <rect x="6" y="6" width="16" height="20" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <rect x="18" y="6" width="16" height="20" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <rect x="30" y="6" width="12" height="20" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <line x1="8" y1="12" x2="20" y2="12" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="20" y1="12" x2="32" y2="12" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="32" y1="12" x2="40" y2="12" stroke="#2a2f33" stroke-width="1"/>
+                  </svg>
+                </span>
+                <span class="style-label">Bypass Track</span>
+              </button>
+              <button class="toggle style-tile" data-style data-value="Shape">
+                <span class="style-thumb" aria-hidden="true">
+                  <svg viewBox="0 0 48 32" aria-hidden="true">
+                    <path d="M8 26V16a8 8 0 0 1 16 0v10" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <rect x="26" y="16" width="14" height="10" fill="#d9e4ec" stroke="#2a2f33" stroke-width="1.5"/>
+                    <line x1="10" y1="20" x2="22" y2="20" stroke="#2a2f33" stroke-width="1"/>
+                    <line x1="28" y1="21" x2="38" y2="21" stroke="#2a2f33" stroke-width="1"/>
+                  </svg>
+                </span>
+                <span class="style-label">Shape</span>
+              </button>
+            </div>
+          </div>
+          <div class="grid-3">
+            <div class="form-field">
+              <label>Width (<span data-unit-label>mm</span>)</label>
+              <input type="number" step="0.1" data-width>
+            </div>
+            <div class="form-field">
+              <label>Height (<span data-unit-label>mm</span>)</label>
+              <input type="number" step="0.1" data-height>
+            </div>
+            <div class="form-field">
+              <label>
+                Panel Configuration
+                <span class="allow-hint" data-allow-hint>Allow: L (Left), R (Right)</span>
+              </label>
+              <input type="text" data-panel>
+            </div>
+          </div>
+          <div class="grid-3">
+            <div class="form-field">
+              <label>Mount</label>
+              <select>
+                <option>IM</option>
+                <option>OM</option>
+                <option>N.W.F</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Total Area</label>
+              <div class="sqm-display" data-sqm-input>0.00</div>
+            </div>
+          </div>
+        </div>
+        <div class="config-card" id="structure">
+          <h4><span class="section-badge badge-b">B</span> Structure</h4>
+          <div class="grid-3">
+            <div class="form-field">
+              <label>Critical Mid Rail</label>
+              <div class="option-row segmented segmented-space" data-field="Critical Mid Rail">
+                <button class="toggle" data-lock="after-style">YES</button>
+                <button class="toggle active" data-lock="after-style">NO</button>
+              </div>
+            </div>
+            <div class="form-field">
+              <label>Horizontal Tpost</label>
+              <div class="option-row segmented segmented-space" data-field="Horizontal Tpost">
+                <button class="toggle" data-lock="after-style">YES</button>
+                <button class="toggle active" data-lock="after-style">NO</button>
+              </div>
+            </div>
+            <div class="form-field">
+              <label>First Panel Opening</label>
+              <div class="option-row segmented segmented-space" data-field="First Panel Opening">
+                <button class="toggle active" data-lock="after-style">Left</button>
+                <button class="toggle" data-lock="after-style">Right</button>
+              </div>
+            </div>
+          </div>
+          <div class="structure-full">
+            <div class="form-field">
+              <label>TILT OPTION</label>
+              <div class="option-row segmented" data-segmented="tilt" data-field="TILT OPTION">
+                <button class="toggle active" data-lock="after-style">Central</button>
+                <button class="toggle" data-lock="after-style">Clear View</button>
+                <button class="toggle" data-lock="after-style">Inside</button>
+                <button class="toggle" data-lock="after-style">Left</button>
+                <button class="toggle" data-lock="after-style">Right</button>
+                <button class="toggle" data-lock="after-style">Offset</button>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="form-field">
+              <label>Mid Rails</label>
+              <div class="pair-inputs">
+                <input type="number" step="0.1" placeholder="Mid Rail 1" data-lock="after-style" data-field="MID RAIL 1">
+                <input type="number" step="0.1" placeholder="Mid Rail 2" data-lock="after-style" data-field="MID RAIL 2">
+              </div>
+              <div class="midrail-ruler-grid">
+                <div class="midrail-ruler-wrap" data-midrail-ruler="MID RAIL 1">
+                  <div class="midrail-ruler">
+                    <div class="midrail-ruler-track"></div>
+                    <div class="midrail-ruler-marks">
+                      <button type="button" class="midrail-ruler-mark is-disabled" style="--tick:0%">0%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:10%">10%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:20%">20%</button><button type="button" class="midrail-ruler-mark" style="--tick:30%" data-lock="after-style" data-midrail-field="MID RAIL 1" data-midrail-ratio="0.3">30%</button><button type="button" class="midrail-ruler-mark" style="--tick:40%" data-lock="after-style" data-midrail-field="MID RAIL 1" data-midrail-ratio="0.4">40%</button><button type="button" class="midrail-ruler-mark" style="--tick:50%" data-lock="after-style" data-midrail-field="MID RAIL 1" data-midrail-ratio="0.5">50%</button><button type="button" class="midrail-ruler-mark" style="--tick:60%" data-lock="after-style" data-midrail-field="MID RAIL 1" data-midrail-ratio="0.6">60%</button><button type="button" class="midrail-ruler-mark" style="--tick:70%" data-lock="after-style" data-midrail-field="MID RAIL 1" data-midrail-ratio="0.7">70%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:80%">80%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:90%">90%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:100%">100%</button>
+                    </div>
+                    <div class="midrail-ruler-hotspots">
+                      <button type="button" class="midrail-ruler-spot" style="--spot:30%" data-lock="after-style" data-midrail-field="MID RAIL 1" data-midrail-ratio="0.3" aria-label="30%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:40%" data-lock="after-style" data-midrail-field="MID RAIL 1" data-midrail-ratio="0.4" aria-label="40%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:50%" data-lock="after-style" data-midrail-field="MID RAIL 1" data-midrail-ratio="0.5" aria-label="50%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:60%" data-lock="after-style" data-midrail-field="MID RAIL 1" data-midrail-ratio="0.6" aria-label="60%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:70%" data-lock="after-style" data-midrail-field="MID RAIL 1" data-midrail-ratio="0.7" aria-label="70%"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="midrail-ruler-wrap" data-midrail-ruler="MID RAIL 2">
+                  <div class="midrail-ruler">
+                    <div class="midrail-ruler-track"></div>
+                    <div class="midrail-ruler-marks">
+                      <button type="button" class="midrail-ruler-mark is-disabled" style="--tick:0%">0%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:10%">10%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:20%">20%</button><button type="button" class="midrail-ruler-mark" style="--tick:30%" data-lock="after-style" data-midrail-field="MID RAIL 2" data-midrail-ratio="0.3">30%</button><button type="button" class="midrail-ruler-mark" style="--tick:40%" data-lock="after-style" data-midrail-field="MID RAIL 2" data-midrail-ratio="0.4">40%</button><button type="button" class="midrail-ruler-mark" style="--tick:50%" data-lock="after-style" data-midrail-field="MID RAIL 2" data-midrail-ratio="0.5">50%</button><button type="button" class="midrail-ruler-mark" style="--tick:60%" data-lock="after-style" data-midrail-field="MID RAIL 2" data-midrail-ratio="0.6">60%</button><button type="button" class="midrail-ruler-mark" style="--tick:70%" data-lock="after-style" data-midrail-field="MID RAIL 2" data-midrail-ratio="0.7">70%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:80%">80%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:90%">90%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:100%">100%</button>
+                    </div>
+                    <div class="midrail-ruler-hotspots">
+                      <button type="button" class="midrail-ruler-spot" style="--spot:30%" data-lock="after-style" data-midrail-field="MID RAIL 2" data-midrail-ratio="0.3" aria-label="30%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:40%" data-lock="after-style" data-midrail-field="MID RAIL 2" data-midrail-ratio="0.4" aria-label="40%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:50%" data-lock="after-style" data-midrail-field="MID RAIL 2" data-midrail-ratio="0.5" aria-label="50%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:60%" data-lock="after-style" data-midrail-field="MID RAIL 2" data-midrail-ratio="0.6" aria-label="60%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:70%" data-lock="after-style" data-midrail-field="MID RAIL 2" data-midrail-ratio="0.7" aria-label="70%"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-field">
+              <label>Split</label>
+              <div class="pair-inputs">
+                <input type="number" step="0.1" placeholder="Split 1" data-lock="after-style" data-field="SPLIT 1">
+                <input type="number" step="0.1" placeholder="Split 2" data-lock="after-style" data-field="SPLIT 2">
+              </div>
+              <div class="midrail-ruler-grid">
+                <div class="midrail-ruler-wrap" data-midrail-ruler="SPLIT 1">
+                  <div class="midrail-ruler">
+                    <div class="midrail-ruler-track"></div>
+                    <div class="midrail-ruler-marks">
+                      <button type="button" class="midrail-ruler-mark is-disabled" style="--tick:0%">0%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:10%">10%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:20%">20%</button><button type="button" class="midrail-ruler-mark" style="--tick:30%" data-lock="after-style" data-midrail-field="SPLIT 1" data-midrail-ratio="0.3">30%</button><button type="button" class="midrail-ruler-mark" style="--tick:40%" data-lock="after-style" data-midrail-field="SPLIT 1" data-midrail-ratio="0.4">40%</button><button type="button" class="midrail-ruler-mark" style="--tick:50%" data-lock="after-style" data-midrail-field="SPLIT 1" data-midrail-ratio="0.5">50%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:60%">60%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:70%">70%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:80%">80%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:90%">90%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:100%">100%</button>
+                    </div>
+                    <div class="midrail-ruler-hotspots">
+                      <button type="button" class="midrail-ruler-spot" style="--spot:30%" data-lock="after-style" data-midrail-field="SPLIT 1" data-midrail-ratio="0.3" aria-label="30%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:40%" data-lock="after-style" data-midrail-field="SPLIT 1" data-midrail-ratio="0.4" aria-label="40%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:50%" data-lock="after-style" data-midrail-field="SPLIT 1" data-midrail-ratio="0.5" aria-label="50%"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="midrail-ruler-wrap" data-midrail-ruler="SPLIT 2">
+                  <div class="midrail-ruler">
+                    <div class="midrail-ruler-track"></div>
+                    <div class="midrail-ruler-marks">
+                      <button type="button" class="midrail-ruler-mark is-disabled" style="--tick:0%">0%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:10%">10%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:20%">20%</button><button type="button" class="midrail-ruler-mark" style="--tick:30%" data-lock="after-style" data-midrail-field="SPLIT 2" data-midrail-ratio="0.3">30%</button><button type="button" class="midrail-ruler-mark" style="--tick:40%" data-lock="after-style" data-midrail-field="SPLIT 2" data-midrail-ratio="0.4">40%</button><button type="button" class="midrail-ruler-mark" style="--tick:50%" data-lock="after-style" data-midrail-field="SPLIT 2" data-midrail-ratio="0.5">50%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:60%">60%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:70%">70%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:80%">80%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:90%">90%</button><button type="button" class="midrail-ruler-mark is-disabled" style="--tick:100%">100%</button>
+                    </div>
+                    <div class="midrail-ruler-hotspots">
+                      <button type="button" class="midrail-ruler-spot" style="--spot:30%" data-lock="after-style" data-midrail-field="SPLIT 2" data-midrail-ratio="0.3" aria-label="30%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:40%" data-lock="after-style" data-midrail-field="SPLIT 2" data-midrail-ratio="0.4" aria-label="40%"></button>
+                      <button type="button" class="midrail-ruler-spot" style="--spot:50%" data-lock="after-style" data-midrail-field="SPLIT 2" data-midrail-ratio="0.5" aria-label="50%"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2 tier-on-tier-group" data-tier-on-tier>
+            <div class="form-field">
+              <label>Tier On Tier</label>
+              <div class="pair-inputs">
+                <input type="number" step="0.1" placeholder="Tier On Tier 1" data-lock="after-style" data-field="TIER ON TIER 1">
+                <input type="number" step="0.1" placeholder="Tier On Tier 2" data-lock="after-style" data-field="TIER ON TIER 2">
+              </div>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="form-field post-group post-angle-group" data-post-group>
+              <label>Post Position</label>
+              <div class="post-angle-grid">
+                <div class="post-angle-cell" data-post-cell="1">
+                  <div class="inline-field" data-inline-field data-field-label="Post Position 1">
+                    <input type="number" step="0.1" placeholder="Post Position 1" data-lock="after-style" data-field="Post Position 1" data-post-position>
+                  </div>
+                  <div class="post-angle-subfield" data-angle-wrap>
+                    <div class="post-angle-subtitle">Angle 1</div>
+                    <div class="inline-field" data-inline-field data-field-label="Angle 1">
+                      <input type="number" step="1" min="79" max="179" placeholder="Angle 1" data-lock="after-style" data-field="Angle 1" data-angle-position data-no-unit="1">
+                    </div>
+                  </div>
+                </div>
+                <div class="post-angle-cell" data-post-cell="2">
+                  <div class="inline-field" data-inline-field data-field-label="Post Position 2">
+                    <input type="number" step="0.1" placeholder="Post Position 2" data-lock="after-style" data-field="Post Position 2" data-post-position>
+                  </div>
+                  <div class="post-angle-subfield" data-angle-wrap>
+                    <div class="post-angle-subtitle">Angle 2</div>
+                    <div class="inline-field" data-inline-field data-field-label="Angle 2">
+                      <input type="number" step="1" min="79" max="179" placeholder="Angle 2" data-lock="after-style" data-field="Angle 2" data-angle-position data-no-unit="1">
+                    </div>
+                  </div>
+                </div>
+                <div class="post-angle-cell" data-post-cell="3">
+                  <div class="inline-field" data-inline-field data-field-label="Post Position 3">
+                    <input type="number" step="0.1" placeholder="Post Position 3" data-lock="after-style" data-field="Post Position 3" data-post-position>
+                  </div>
+                  <div class="post-angle-subfield" data-angle-wrap>
+                    <div class="post-angle-subtitle">Angle 3</div>
+                    <div class="inline-field" data-inline-field data-field-label="Angle 3">
+                      <input type="number" step="1" min="79" max="179" placeholder="Angle 3" data-lock="after-style" data-field="Angle 3" data-angle-position data-no-unit="1">
+                    </div>
+                  </div>
+                </div>
+                <div class="post-angle-cell" data-post-cell="4">
+                  <div class="inline-field" data-inline-field data-field-label="Post Position 4">
+                    <input type="number" step="0.1" placeholder="Post Position 4" data-lock="after-style" data-field="Post Position 4" data-post-position>
+                  </div>
+                  <div class="post-angle-subfield" data-angle-wrap>
+                    <div class="post-angle-subtitle">Angle 4</div>
+                    <div class="inline-field" data-inline-field data-field-label="Angle 4">
+                      <input type="number" step="1" min="79" max="179" placeholder="Angle 4" data-lock="after-style" data-field="Angle 4" data-angle-position data-no-unit="1">
+                    </div>
+                  </div>
+                </div>
+                <div class="post-angle-cell" data-post-cell="5">
+                  <div class="inline-field" data-inline-field data-field-label="Post Position 5">
+                    <input type="number" step="0.1" placeholder="Post Position 5" data-lock="after-style" data-field="Post Position 5" data-post-position>
+                  </div>
+                  <div class="post-angle-subfield" data-angle-wrap>
+                    <div class="post-angle-subtitle">Angle 5</div>
+                    <div class="inline-field" data-inline-field data-field-label="Angle 5">
+                      <input type="number" step="1" min="79" max="179" placeholder="Angle 5" data-lock="after-style" data-field="Angle 5" data-angle-position data-no-unit="1">
+                    </div>
+                  </div>
+                </div>
+                <div class="post-angle-cell" data-post-cell="6">
+                  <div class="inline-field" data-inline-field data-field-label="Post Position 6">
+                    <input type="number" step="0.1" placeholder="Post Position 6" data-lock="after-style" data-field="Post Position 6" data-post-position>
+                  </div>
+                  <div class="post-angle-subfield" data-angle-wrap>
+                    <div class="post-angle-subtitle">Angle 6</div>
+                    <div class="inline-field" data-inline-field data-field-label="Angle 6">
+                      <input type="number" step="1" min="79" max="179" placeholder="Angle 6" data-lock="after-style" data-field="Angle 6" data-angle-position data-no-unit="1">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+        <div class="config-card" id="louvers">
+          <h4><span class="section-badge badge-c">C</span> Louvers</h4>
+          <div class="card-list card-list--media" data-lock="after-style" data-profile-list="Louver"></div>
+          <div class="form-field" style="margin-top:10px" data-hidden-user-control="louver-opening">
+            <div class="profile-subtitle profile-subtitle--spaced">Louver Opening</div>
+            <div class="option-row segmented" data-field="Louver Opening">
+              <button class="toggle active" data-lock="after-style">1way</button>
+              <button class="toggle" data-lock="after-style">2way</button>
+            </div>
+          </div>
+        </div>
+        <div class="config-card" id="stile">
+          <h4><span class="section-badge badge-d">D</span> Stile&TPost</h4>
+          <div class="profile-subtitle">Stile</div>
+          <div class="card-list card-list--media" data-lock="after-style" data-profile-list="Stile"></div>
+          <div data-tpost-block>
+            <div class="profile-subtitle profile-subtitle--spaced">TPost</div>
+            <div class="card-list card-list--media" data-lock="after-style" data-profile-list="TPost"></div>
+          </div>
+        </div>
+        <div class="config-card" id="frames">
+          <h4><span class="section-badge badge-e">E</span> Frames</h4>
+          <div class="card-list card-list--media" data-lock="after-style" data-profile-list="Frame"></div>
+          <div class="form-field" style="margin-top:12px">
+            <label>Frame Sides</label>
+            <div class="grid-4">
+              <label><input type="checkbox" checked data-lock="after-style" data-frame-side="left"> Left</label>
+              <label><input type="checkbox" checked data-lock="after-style" data-frame-side="right"> Right</label>
+              <label><input type="checkbox" checked data-lock="after-style" data-frame-side="top"> Top</label>
+              <label><input type="checkbox" checked data-lock="after-style" data-frame-side="bottom"> Bottom</label>
+            </div>
+          </div>
+          <div class="form-field" style="margin-top:12px">
+            <label>Sill Plate</label>
+            <div class="grid-4">
+              <label><input type="checkbox" data-lock="after-style" data-cilplate="left"> Left</label>
+              <label><input type="checkbox" data-lock="after-style" data-cilplate="right"> Right</label>
+              <label><input type="checkbox" data-lock="after-style" data-cilplate="top"> Top</label>
+              <label><input type="checkbox" data-lock="after-style" data-cilplate="bottom"> Bottom</label>
+            </div>
+          </div>
+          <div class="form-field" style="margin-top:12px">
+            <label>Frame Build Out</label>
+            <div class="grid-4">
+              <input type="number" placeholder="Left" data-lock="after-style" data-build-up="left">
+              <input type="number" placeholder="Right" data-lock="after-style" data-build-up="right">
+              <input type="number" placeholder="Top" data-lock="after-style" data-build-up="top">
+              <input type="number" placeholder="Bottom" data-lock="after-style" data-build-up="bottom">
+            </div>
+          </div>
+          <div class="form-field" style="margin-top:12px">
+            <label>Battens</label>
+            <div class="grid-3">
+              <input type="number" placeholder="Width" data-lock="after-style" data-batten="width">
+              <input type="number" placeholder="Depth" data-lock="after-style" data-batten="depth">
+              <input type="number" placeholder="Height" data-lock="after-style" data-batten="height">
+            </div>
+          </div>
+        </div>
+        <div class="config-card" id="finish">
+          <h4><span class="section-badge badge-f">F</span> Finish</h4>
+          <div class="grid-2">
+            <div class="form-field">
+              <label>Shutter Color</label>
+              <select data-lock="after-style" data-color-select="shutter">
+                <option value="">Select</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Hinge Color</label>
+              <select data-lock="after-style" data-color-select="hinge">
+                <option value="">Select</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field" style="margin-top:12px">
+            <label>Notes</label>
+            <textarea rows="3" data-lock="after-style"></textarea>
+          </div>
+        </div>
+        <div class="config-card" id="others" data-others-section>
+          <h4><span class="section-badge badge-g">G</span> Others</h4>
+          <div class="grid-2">
+            <div class="form-field" data-sliding-option style="display:none">
+              <label>Sliding Option</label>
+              <div class="option-row segmented" data-field="Sliding Option">
+                <button class="toggle" data-lock="after-style">Open</button>
+                <button class="toggle" data-lock="after-style">Closed</button>
+              </div>
+            </div>
+            <div class="form-field" data-track-option style="display:none">
+              <label>Track option</label>
+              <div class="option-row segmented" data-field="Track option">
+                <button class="toggle" data-lock="after-style">U Track</button>
+                <button class="toggle" data-lock="after-style">M Track</button>
+              </div>
+            </div>
+          </div>
+          <div class="grid-2" data-shape-section style="display:none">
+            <div class="form-field">
+              <label>ShapeType</label>
+              <select data-lock="after-style">
+                <option value="">Select</option>
+                <option>French Door</option>
+                <option>Angled</option>
+                <option>Arch</option>
+                <option>Circle</option>
+                <option>Elongated Eyebrow</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>DrawingUpload</label>
+              <input type="file" data-lock="after-style" data-field="DrawingUpload" data-drawing-upload>
+              <div class="drawing-upload-row">
+                <button class="ghost" type="button" data-drawing-browse>Choose File</button>
+                <span class="drawing-file" data-drawing-filename>No file selected</span>
+                <button class="ghost" type="button" data-drawing-clear>Clear</button>
+              </div>
+              <div class="drawing-hint" data-drawing-hint>No file selected</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <aside class="preview">
+        <h4>Preview</h4>
+        <div class="preview-box"></div>
+        <div class="preview-panel-label" data-preview-panel-label>-</div>
+        <div class="meta meta-table">
+          <div class="meta-label">Room</div>
+          <div class="meta-value" data-preview-room>-</div>
+          <div class="meta-label">Product</div>
+          <div class="meta-value" data-preview-product>-</div>
+          <div class="meta-label">Style</div>
+          <div class="meta-value" data-preview-style>-</div>
+          <div class="meta-label">Panel</div>
+          <div class="meta-value" data-preview-panel>-</div>
+          <div class="meta-label">Width</div>
+          <div class="meta-value" data-preview-width>-</div>
+          <div class="meta-label">Height</div>
+          <div class="meta-value" data-preview-height>-</div>
+        </div>
+        <div class="sqm" data-sqm>0.00㎡</div>
+        <button class="primary w-100" data-add-cart>Add to Order</button>
+        <button class="light w-100" data-clear-sheet>Clear Sheet</button>
+      </aside>
+    </div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/cart-drawer.js"></script>
+  <script src="/js/units.js"></script>
+  <script src="/js/user-menu.js"></script>
+  <script src="/js/panel-config-rules.js"></script>
+  <script src="/js/configurator.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{if(window.cartDrawerInit)window.cartDrawerInit();if(window.userMenuInit)window.userMenuInit();if(window.configuratorInit)window.configuratorInit()})</script>
+</body>
+</html>

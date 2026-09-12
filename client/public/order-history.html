@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/orders.css">
+  <link rel="stylesheet" href="/css/cart-drawer.css">
+  <link rel="stylesheet" href="/css/remakes.css">
+  <link rel="stylesheet" href="/css/user-menu.css">
+</head>
+<body data-page="order-history">
+  <div class="topbar">
+    <img class="brand-logo" src="/images/logo.png" alt="Kenda">
+    <div class="nav-links nav-pills">
+      <a href="/user-dashboard.html"><span class="nav-icon">⌂</span>Dashboard</a>
+      <a href="/configurator.html"><span class="nav-icon">⚙</span>Configurator</a>
+      <a class="active" href="/order-history.html"><span class="nav-icon">🧾</span>Order History</a>
+      <a href="/remakes.html"><span class="nav-icon">🛠</span>Remakes</a>
+    </div>
+    <div class="topbar-actions">
+      <div class="unit-toggle" data-unit-toggle>
+        <button type="button" data-unit="mm">mm</button>
+        <button type="button" data-unit="inch">in</button>
+      </div>
+      <a class="cart-icon" href="/cart.html" style="visibility:hidden;pointer-events:none">🛒<span class="badge">0</span></a>
+      <div class="user-menu" data-user-menu>
+        <button class="user-avatar" type="button" data-user-avatar>👤</button>
+        <div class="user-menu-panel">
+          <button class="user-menu-item" type="button" data-user-action="password">Change Password</button>
+          <button class="user-menu-item" type="button" data-user-action="logout">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content" style="
+    padding-left: 64px;
+    padding-top: 32px;
+    padding-right: 64px;
+">
+    <div class="page-header">
+      <h2>My Order History</h2>
+    </div>
+    <div class="table-card">
+      <div class="filters order-history-filters">
+        <input placeholder="Search Order/Customer" data-order-search>
+        <input placeholder="Select dates" type="date" data-order-date>
+      </div>
+      <div class="filter-help">Search supports * as AND (e.g. ORD*Alice). Date filters by day; use YYYY-MM-DD.</div>
+      <table class="table order-table">
+        <thead>
+          <tr>
+            <th>Order No</th>
+            <th>Customer Name</th>
+            <th>Company Name</th>
+            <th>Order Reference</th>
+            <th>PO</th>
+            <th>Side Mark</th>
+            <th>Date</th>
+            <th data-area-header>SQM</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody data-order-list>
+          <tr>
+            <td>BB-00001</td>
+            <td>Alice</td>
+            <td>Bright Blinds</td>
+            <td>Living Room</td>
+            <td>PO-001</td>
+            <td>South</td>
+            <td>2026-02-18</td>
+            <td>12.6</td>
+            <td>pending</td>
+            <td class="action-cell">
+              <button class="ghost small action-trigger" type="button" data-action-trigger>⋯</button>
+              <div class="action-menu">
+                <a class="action-item" href="#">Detail</a>
+                <button class="action-item" type="button" data-remake-open>Remake</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/cart-drawer.js"></script>
+  <script src="/js/units.js"></script>
+  <script src="/js/orders-common.js"></script>
+  <script src="/js/user-menu.js"></script>
+  <script src="/js/orders.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{if(window.cartDrawerInit)window.cartDrawerInit();if(window.userMenuInit)window.userMenuInit();if(window.ordersInit)window.ordersInit()})</script>
+  <div class="order-edit-modal" data-remake-modal>
+    <div class="order-edit-backdrop" data-remake-close></div>
+    <div class="order-edit-panel">
+      <div class="remake-panel">
+        <div class="remake-header">
+          <div>
+            <div class="small">Create Remake</div>
+            <h3 data-remake-order-no>Remake Request</h3>
+          </div>
+          <button class="ghost" type="button" data-remake-close>Close</button>
+        </div>
+        <div class="remake-body">
+          <div class="form-field">
+            <label>Select Shutter</label>
+            <select data-remake-line>
+              <option value="">Select</option>
+              <option>Shutter #1 · Living Room · Full Height</option>
+              <option>Shutter #2 · Kitchen · Café style</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Remake Type</label>
+            <div class="remake-types">
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Frame">Frame</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Posts">Posts</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Entier Panel">Entier Panel</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Entier Shutter">Entier Shutter</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Tilt Rod">Tilt Rod</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Hinges">Hinges</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Louvers">Louvers</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Paint">Paint</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Cover Strips">Cover Strips</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Battens or Beading or Triangle">Battens or Beading or Triangle</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Resize">Resize</label>
+              <label class="remake-chip"><input type="checkbox" data-remake-type value="Locks">Locks</label>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Reference File (optional)</label>
+            <div class="remake-upload">
+              <input type="file" data-remake-file>
+              <div class="remake-upload-box" data-remake-upload-box>Drop file or click to upload</div>
+            </div>
+            <div class="remake-upload-meta">
+              <span class="remake-upload-name" data-remake-file-name>No file selected</span>
+              <button class="ghost small" type="button" data-remake-file-clear>Remove</button>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Note</label>
+            <textarea rows="3" placeholder="Describe the issue..." data-remake-note></textarea>
+          </div>
+        </div>
+        <div class="remake-actions">
+          <div class="remake-error" data-remake-error></div>
+          <button class="ghost" type="button" data-remake-close>Cancel</button>
+          <button class="primary" type="button" data-remake-submit>Send Remake</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

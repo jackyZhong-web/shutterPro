@@ -1,0 +1,22 @@
+.user-menu{position:relative;display:inline-flex;align-items:center}
+.user-avatar{width:36px;height:36px;border-radius:10px;border:none;background:var(--theme-soft);color:var(--theme-primary);font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.user-menu-panel{position:absolute;top:calc(100% + 8px);right:0;background:#fff;border:1px solid #eef2f6;border-radius:10px;box-shadow:0 10px 30px rgba(30,40,60,.12);padding:6px;display:none;min-width:160px;z-index:120}
+.user-menu.open .user-menu-panel{display:flex;flex-direction:column;gap:4px}
+.user-menu-item{border:none;background:none;text-align:left;padding:8px 10px;border-radius:8px;color:#2a3441;cursor:pointer;font-size:12px}
+.user-menu-item:hover{background:var(--theme-soft)}
+.user-modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:1000}
+.user-modal.is-open{display:flex}
+.user-modal-backdrop{position:absolute;inset:0;background:rgba(15,23,42,0.4)}
+.user-modal-card{position:relative;background:#fff;border-radius:14px;box-shadow:0 20px 60px rgba(15,23,42,0.15);width:min(520px,92vw);max-height:90vh;overflow:hidden;display:flex;flex-direction:column}
+.user-modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid #eef2f6}
+.user-modal-body{padding:16px 18px;overflow:auto}
+.user-modal-actions{display:flex;gap:10px;justify-content:flex-end;padding:14px 18px;border-top:1px solid #eef2f6}
+.user-modal-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.user-modal-form .form-field{margin:0}
+.user-modal-form .form-field.field-full{grid-column:1/-1}
+.user-modal-form .form-field textarea{min-height:90px;resize:vertical}
+.user-modal-error{grid-column:1/-1;color:#c0392b;font-size:12px}
+.user-modal-text{color:#5e6b76}
+.required-mark{color:#c0392b;margin-left:4px}
+.form-field.invalid input,.form-field.invalid select,.form-field.invalid textarea{border-color:#c0392b}
+.field-error{color:#c0392b;font-size:12px;margin-top:4px;min-height:16px}

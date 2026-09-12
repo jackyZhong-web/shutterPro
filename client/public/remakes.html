@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/orders.css">
+  <link rel="stylesheet" href="/css/cart-drawer.css">
+  <link rel="stylesheet" href="/css/remakes.css">
+  <link rel="stylesheet" href="/css/user-menu.css">
+</head>
+<body data-page="remakes">
+  <div class="topbar">
+    <img class="brand-logo" src="/images/logo.png" alt="Kenda">
+    <div class="nav-links nav-pills">
+      <a href="/user-dashboard.html"><span class="nav-icon">⌂</span>Dashboard</a>
+      <a href="/configurator.html"><span class="nav-icon">⚙</span>Configurator</a>
+      <a href="/order-history.html"><span class="nav-icon">🧾</span>Order History</a>
+      <a class="active" href="/remakes.html"><span class="nav-icon">🛠</span>Remakes</a>
+    </div>
+    <div class="topbar-actions">
+      <div class="unit-toggle" data-unit-toggle>
+        <button type="button" data-unit="mm">mm</button>
+        <button type="button" data-unit="inch">in</button>
+      </div>
+      <a class="cart-icon" href="/cart.html" style="visibility:hidden;pointer-events:none">🛒<span class="badge">0</span></a>
+      <div class="user-menu" data-user-menu>
+        <button class="user-avatar" type="button" data-user-avatar>👤</button>
+        <div class="user-menu-panel">
+          <button class="user-menu-item" type="button" data-user-action="password">Change Password</button>
+          <button class="user-menu-item" type="button" data-user-action="logout">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content" style="padding-left:64px;padding-top:32px;padding-right:64px;">
+    <div class="page-header">
+      <h2>Remakes</h2>
+    </div>
+    <div class="table-card">
+      <div class="filters remake-filters">
+        <input placeholder="Search Remake/Order/Customer" data-remake-search>
+        <input placeholder="Select date" type="date" data-remake-date>
+      </div>
+      <div class="filter-help">Search supports * as AND (e.g. RM01*Alice). Date filters by day; use YYYY-MM-DD.</div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Remake No</th>
+            <th>Order No</th>
+            <th>Customer</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Note</th>
+            <th>Comment</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody data-remake-list></tbody>
+      </table>
+    </div>
+    <div class="order-edit-modal" data-remake-user-modal>
+      <div class="order-edit-backdrop" data-remake-user-close></div>
+      <div class="order-edit-panel">
+        <div class="remake-panel">
+          <div class="remake-header">
+            <div>
+              <div class="small">Remake Detail</div>
+              <h3 data-user-remake-no></h3>
+            </div>
+            <button class="ghost" type="button" data-remake-user-close>Close</button>
+          </div>
+          <div class="remake-body">
+            <div class="order-info">
+              <div>Order No<strong data-user-remake-order-no>-</strong></div>
+              <div>Customer<strong data-user-remake-customer>-</strong></div>
+              <div>Company<strong data-user-remake-company>-</strong></div>
+              <div>Status<strong data-user-remake-status>-</strong></div>
+            </div>
+            <div class="form-field">
+              <label>Selected Shutter</label>
+              <div class="table-input" data-user-remake-line>-</div>
+            </div>
+            <div class="form-field">
+              <label>Remake Type</label>
+              <div class="remake-types" data-user-remake-types></div>
+            </div>
+            <div class="form-field">
+              <label>Reference File</label>
+              <div class="table-input" data-user-remake-file>-</div>
+            </div>
+            <div class="form-field">
+              <label>User Note</label>
+              <div class="table-input" data-user-remake-note>-</div>
+            </div>
+            <div class="form-field">
+              <label>Refuse Comment</label>
+              <div class="table-input" data-user-remake-comment>-</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/cart-drawer.js"></script>
+  <script src="/js/units.js"></script>
+  <script src="/js/user-menu.js"></script>
+  <script src="/js/remakes.js"></script>
+  <script>document.addEventListener("DOMContentLoaded",()=>{if(window.cartDrawerInit)window.cartDrawerInit();if(window.userMenuInit)window.userMenuInit()})</script>
+</body>
+</html>

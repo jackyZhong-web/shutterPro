@@ -1,0 +1,71 @@
+const test = require("node:test")
+const assert = require("node:assert/strict")
+const fs = require("node:fs")
+const path = require("node:path")
+
+const root = path.resolve(__dirname, "..", "..")
+const read = (rel) => fs.readFileSync(path.join(root, rel), "utf8")
+
+test("configurator 与 order-line-edit 都接入 panel 规则脚本", () => {
+  const configuratorHtml = read("client/public/configurator.html")
+  const orderLineEditHtml = read("client/public/order-line-edit.html")
+  assert.match(configuratorHtml, /<script src="\/js\/panel-config-rules\.js"><\/script>/)
+  assert.match(orderLineEditHtml, /<script src="\/js\/panel-config-rules\.js"><\/script>/)
+})
+
+test("configurator 提供按柱位上下对应的 Angle 1..6 输入并标记为非单位换算字段", () => {
+  const configuratorHtml = read("client/public/configurator.html")
+  assert.match(configuratorHtml, /data-post-cell="1"/)
+  assert.match(configuratorHtml, /data-angle-wrap/)
+  assert.match(configuratorHtml, /post-angle-subtitle">Angle 1</)
+  assert.match(configuratorHtml, /data-field="Angle 1"/)
+  assert.match(configuratorHtml, /data-field="Angle 6"/)
+  assert.match(configuratorHtml, /data-angle-position/)
+  assert.match(configuratorHtml, /data-no-unit="1"/)
+})
+
+test("configurator 逻辑包含 angle 字段、B 柱显示逻辑和独立角度校验", () => {
+  const configuratorJs = read("client/public/js/configurator.js")
+  assert.match(configuratorJs, /const panelConfigRules = window\.panelConfigRules \|\| \{\}/)
+  assert.match(configuratorJs, /const getBPostSequences =/)
+  assert.match(configuratorJs, /const wrap = input\.closest\("\[data-angle-wrap\]"\)/)
+  assert.match(configuratorJs, /wrap\.classList\.toggle\("is-visible", visible\)/)
+  assert.match(configuratorJs, /if \(!String\(input\.value \|\| ""\)\.trim\(\)\) input\.value = "135"/)
+  assert.match(configuratorJs, /"Angle 1": "angle1"/)
+  assert.match(configuratorJs, /if \(label\.startsWith\("Angle"\)\) return \{ min: 79, max: 179, field: "angle" \}/)
+  assert.match(configuratorJs, /if \(rule && rule\.field === "angle"\) return formatNumber\(value\)/)
+  assert.match(configuratorJs, /supportsExtendedStructuralPosts\(state\.style\)/)
+})
+
+test("后端模型、DTO、补列脚本与服务链路都包含 angle1..6", () => {
+  const models = read("server/models.js")
+  const schemas = read("server/dto/schemas.js")
+  const db = read("server/db.js")
+  const cartService = read("server/services/cartService.js")
+  const ordersService = read("server/services/ordersService.js")
+  assert.match(models, /angle1:\{type:DataTypes\.STRING\(64\)\}/)
+  assert.match(models, /angle6:\{type:DataTypes\.STRING\(64\)\}/)
+  assert.match(schemas, /angle1:z\.string\(\)\.optional\(\)\.default\(""\)/)
+  assert.match(schemas, /angle6:z\.string\(\)\.optional\(\)\.default\(""\)/)
+  assert.match(db, /ensureColumn\("order_lines",`angle\$\{i\}`/)
+  assert.match(db, /ensureColumn\("cart_lines",`angle\$\{i\}`/)
+  assert.match(cartService, /angle1:source\.angle1\|\|""/)
+  assert.match(cartService, /angle6:source\.angle6\|\|""/)
+  assert.match(ordersService, /angle1:source\.angle1\|\|""/)
+  assert.match(ordersService, /angle6:source\.angle6\|\|""/)
+})
+
+test("订单详情与 Excel 导出配置都暴露 angle1..6", () => {
+  const ordersCommon = read("client/public/js/orders-common.js")
+  const adminJs = read("client/public/js/admin.js")
+  assert.match(ordersCommon, /pushField\(structureFields, "ANGLE 1", line\.angle1\)/)
+  assert.match(ordersCommon, /pushField\(structureFields, "ANGLE 6", line\.angle6\)/)
+  assert.match(adminJs, /"angle1","angle2","angle3","angle4","angle5","angle6"/)
+  assert.match(adminJs, /\^angle\[1-6\]\$/)
+})
+
+test("购物车订单列表也暴露 angle1..6", () => {
+  const cartJs = read("client/public/js/cart.js")
+  assert.match(cartJs, /pushField\(structureFields,"ANGLE 1",line\.angle1\)/)
+  assert.match(cartJs, /pushField\(structureFields,"ANGLE 6",line\.angle6\)/)
+})

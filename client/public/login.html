@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EVERMERE SHUTTERS</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body class="login-wrap" data-page="login">
+  <div class="login-card">
+    <img class="brand-logo" src="/images/logo.png" alt="Kenda">
+    <p class="login-subtitle">Sign in to access your dashboard</p>
+    <div class="form-field">
+      <label>Email/LoginName</label>
+      <input type="text" placeholder="name@company.com" data-login-name>
+      <div class="field-error" data-login-name-error></div>
+    </div>
+    <div class="form-field">
+      <label>Password</label>
+      <div class="password-input-wrap">
+        <input type="password" placeholder="••••••••" data-login-password>
+        <button type="button" class="password-toggle-btn" data-login-password-toggle aria-label="Show password">👁</button>
+      </div>
+      <div class="field-error" data-login-password-error></div>
+    </div>
+    <button class="primary w-100" data-login-submit>Sign In</button>
+    <div class="small" style="margin-top:8px;color:#c0392b" data-login-error></div>
+    <div class="login-help">
+      <button class="link" type="button" data-contact-sales data-admin-name="Administrator" data-admin-email="admin@system.com" data-admin-phone="+1 000 000 0000">Contact Sales</button>
+      <span>Don't have an account?</span>
+    </div>
+  </div>
+  <div class="contact-modal" data-contact-modal>
+    <div class="contact-backdrop" data-contact-close></div>
+    <div class="contact-panel">
+      <div class="contact-title">Contact Sales</div>
+      <div class="contact-row"><strong>Name</strong><span data-contact-name></span></div>
+      <div class="contact-row"><strong>Email</strong><span data-contact-email></span></div>
+      <div class="contact-row"><strong>Phone</strong><span data-contact-phone></span></div>
+      <button class="primary w-100" type="button" data-contact-close>OK</button>
+    </div>
+  </div>
+  <div class="footer" style="position:fixed;bottom:0;left:0;right:0">
+    <div>© 2026 ShutterPro Inc. Secure Login System.</div>
+    <div></div>
+  </div>
+<script src="/js/api.js"></script>
+<script src="/js/login.js"></script>
+<script>document.addEventListener("DOMContentLoaded",()=>{if(window.loginInit)window.loginInit()})</script>
+</body>
+</html>
